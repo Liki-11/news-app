@@ -1,0 +1,83 @@
+{
+    "status": "ok",
+    "totalResults": 290,
+    "articles": [
+    {
+    "source": {
+    "id": "theverge",
+    "name": "The Verge"
+    },
+    "author": "David Pierce",
+    "title": "A new and better way to control your smart home",
+    "description": "Plus: Sonic the Hedgehog 3, Flipboard Surf, the new Superman trailer, 1800CHATGPT, and more in this week’s Installer newsletter.",
+    "url": "https://www.theverge.com/2024/12/22/24325938/homeassistantvoicesonic3flipboardsurfinstaller",
+    "urlToImage": "https://cdn.voxcdn.com/thumbor/NNvs3i82nR9lUFgQhBexMc6Qc4=/0x0:2028x1353/1200x628/filters:focal(1014x677:1015x678)/cdn.voxcdn.com/uploads/chorus_asset/file/25799214/installer_65.png",
+    "publishedAt": "20241222T13:00:00Z",
+    "content": "A new and better way to control your smart home\r\nA new and better way to control your smart home\r\n / Plus, in this weeks Installer: A new app for exploring the fediverse, the next Sonic movie, and Ch… [+10802 chars]"
+    },
+    {
+    "source": {
+    "id": null,
+    "name": "Android Central"
+    },
+    "author": "michael.hicks@futurenet.com (Michael L Hicks)",
+    "title": "I'm kind of shocked at how good smartwatches have gotten",
+    "description": "Apple, Samsung, and Google started taking fitness coaching seriously, while Garmin and its rivals delivered one killer watch after another.",
+    "url": "https://www.androidcentral.com/wearables/smartwatches2024retrospectivetheyregettingshockinglygood",
+    "urlToImage": "https://cdn.mos.cms.futurecdn.net/hogQeSaTXWrEBR5EMBFXKH120080.jpg",
+    "publishedAt": "20241222T13:00:00Z",
+    "content": "(Image credit: Android Central)\r\nIn this weekly column, Android Central Wearables Editor Michael Hicks talks about the world of wearables, apps, and fitness tech related to running and health, in his… [+6731 chars]"
+    },
+    {
+    "source": {
+    "id": null,
+    "name": "MacRumors"
+    },
+    "author": "Joe Rossignol",
+    "title": "Apple Preparing iOS 18.2.1 Update for iPhone",
+    "description": "Apple appears to be internally testing iOS 18.2.1 for the iPhone, based on evidence of the software update in our website's analytic logs this week. The logs have accurately revealed many iOS versions before they were released.\n\n\n\n\n\niOS 18.2.1 should be a min…",
+    "url": "https://www.macrumors.com/2024/12/21/applepreparingios1821/",
+    "urlToImage": "https://images.macrumors.com/t/I00FSkiBU64SDTMfRlzvINueoe0=/2500x/articlenew/2024/06/GenericiOS18FeatureRealMock.jpg",
+    "publishedAt": "20241222T00:45:03Z",
+    "content": "Apple appears to be internally testing iOS 18.2.1 for the iPhone, based on evidence of the software update in our website's analytic logs this week. The logs have accurately revealed many iOS version… [+1040 chars]"
+    },
+    {
+    "source": {
+    "id": null,
+    "name": "NPR"
+    },
+    "author": "Windsor Johnston",
+    "title": "This Christmas I'll be grieving. Here's how I'll be finding joy.",
+    "description": "Since her husband's death, newscaster Windsor Johnston has been looking for ways to recapture joy and continue her healing journey — one that's taken her to a place she'd never expected.",
+    "url": "https://www.npr.org/2024/12/22/nxs15232706/holidaygriefchristmasessay",
+    "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1600x900+0+0/resize/1400/quality/100/format/png/?url=http%3A%2F%2Fnprbrightspot.s3.amazonaws.com%2Ff7%2F54%2Fb702d9fc4a3aa201e40a56e840c1%2Funtitleddesign.png",
+    "publishedAt": "20241222T11:00:00Z",
+    "content": "This month marks a series of \"firsts\" for me.\r\nIt'll be the first December that I'll spend Christmas without my husband. It'll also be the first December that I'll celebrate our anniversary alone.\r\nI… [+4739 chars]"
+    },
+    {
+    "source": {
+    "id": null,
+    "name": "Slashdot.org"
+    },
+    "author": "EditorDavid",
+    "title": "Months After Its 20th Anniversary, OpenStreetMap Suffers an Extended Outage",
+    "description": "Monday longtime Slashdot reader denelson83 wrote: The crowdsourced, widelyused map database OpenStreetMap has had a hardware failure at its upstream ISP in Amsterdam and has been put into a protective readonly mode to avoid loss or corruption of data. . \n\n…",
+    "url": "https://tech.slashdot.org/story/24/12/22/022227/monthsafterits20thanniversaryopenstreetmapsuffersanextendedoutage",
+    "urlToImage": "https://a.fsdn.com/sd/topics/internet_64.png",
+    "publishedAt": "20241222T02:34:00Z",
+    "content": "Monday longtime Slashdot reader denelson83 wrote: The crowdsourced, widelyused map database OpenStreetMap has had a hardware failure at its upstream ISP in Amsterdam and has been put into a protect… [+3549 chars]"
+    },
+    {
+    "source": {
+    "id": "businessinsider",
+    "name": "Business Insider"
+    },
+    "author": "Ashley Archambault",
+    "title": "Alternating custody over holidays was tough. My son now spends time with both me and his dad, and it works better for everyone.",
+    "description": "Coparenting over the holidays can be tough. We used to alternate holidays, but now, our son sees both his parents each holiday day.",
+    "url": "https://www.businessinsider.com/holidaysplitcustodydivorcecoparenting202412",
+    "urlToImage": "https://i.insider.com/674f39a09e9761932b4a59ce?width=1200&format=jpeg",
+    "publishedAt": "20241222T12:44:01Z",
+    "content": "The author and her ex found a way to share custody over the holidays that works for everyone.Courtesy of Ashley Archambault\r\nWhen my son was little, his father and I went through a custody trial and … [+4666 chars]"
+    }]}
+    

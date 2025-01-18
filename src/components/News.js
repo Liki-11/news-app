@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./Spinner.js";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
+
 
 export default class News extends Component {
   static defaultProps = {
@@ -185,13 +187,14 @@ export default class News extends Component {
     super(props);
     this.state = {
       articles: this.articles,
-      loading: false,
+      loading: true,
       page: 1,
     };
-   document.title =`${this.props.category}-NewsMonkey`;
+    document.title = `${this.props.category}-NewsMonkey`;
   }
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=bee7fb71038643ac90610a01acf4aaf8&page=1&pageSize=${this.props.pageSize}`;
+    this.props.setProgress(0);
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -200,20 +203,16 @@ export default class News extends Component {
       totalArticles: parsedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100);
   }
   handleNextClick = async () => {
+    this.props.setProgress(0);
     if (
       this.state.page + 1 >
       Math.ceil(this.state.totalResults / this.props.pageSize)
     ) {
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=${
-        this.props.country
-      }&category=${
-        this.props.category
-      }&apiKey=bee7fb71038643ac90610a01acf4aaf8&page=${
-        this.state.page + 1
-      }&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
       this.setState({ loading: true });
       let data = await fetch(url);
       let parsedData = await data.json();
@@ -224,15 +223,11 @@ export default class News extends Component {
       });
       console.log(this.state.page);
     }
+    this.props.setProgress(100);
   };
   handlePreviousClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=${
-      this.props.country
-    }&category=${
-      this.props.category
-    }&apiKey=bee7fb71038643ac90610a01acf4aaf8&page=${
-      this.state.page - 1
-    }&pageSize=${this.props.pageSize}`;
+    this.props.setProgress(0);
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -241,6 +236,26 @@ export default class News extends Component {
       articles: parsedData.articles,
       loading: false,
     });
+    this.props.setProgress(100);
+  };
+
+  fetchMoreData = async () => {
+
+    this.setState({
+      page: this.state.page + 1
+    });
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category
+      }&apiKey=${this.props.apiKey}&page=${this.state.page - 1
+      }&pageSize=${this.props.pageSize}`;
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    this.setState({
+      articles: this.state.articles.concat(parsedData.articles),
+      totalResults: parsedData.totalResults,
+      loading: false
+    });
+
   };
   render() {
     return (
@@ -248,31 +263,40 @@ export default class News extends Component {
         <div className="text-center">
           <h1>News-Top Headlines on {this.props.category}</h1>
         </div>
-       {/*{this.state.loading && <Spinner/>} */}
+        {this.state.loading && <Spinner/>} 
+        <InfiniteScroll
+          dataLength={this.state.articles.length}
+          next={this.fetchMoreData}
+          hasMore={this.state.articles.length != this.state.totalArticles}
+          loader={<Spinner />}>
+            <div className="container">
 
-        <div className="row">
-          { 
-            this.state.articles.map((element) => {
-              return (
-                <div className="col-md-4 my-3" key={element.url}>
-                  <Newsitem
-                    title={element.title ? element.title.slice(0, 45) : ""}
-                    description={
-                      element.description
-                        ? element.description.slice(0, 88)
-                        : ""
-                    }
-                    imageurl={element.urlToImage}
-                    newsurl={element.url}
-                    author={element.author}
-                    date={element.publishedAt}
-                    category={element.category}
-                  />
-                </div>
-              );
-            }
-          ) }
-        </div>
+            
+          <div className="row">
+            {
+              this.state.articles.map((element) => {
+                return (
+                  <div className="col-md-4 my-3" key={element.url}>
+                    <Newsitem
+                      title={element.title ? element.title.slice(0, 45) : ""}
+                      description={
+                        element.description
+                          ? element.description.slice(0, 88)
+                          : ""
+                      }
+                      imageurl={element.urlToImage}
+                      newsurl={element.url}
+                      author={element.author}
+                      date={element.publishedAt}
+                      category={element.category}
+                    />
+                  </div>
+                );
+              }
+              )}
+          </div>
+          </div>
+        </InfiniteScroll>
         <div>
           <div className="container d-flex justify-content-between my-2">
             <button

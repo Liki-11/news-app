@@ -30,13 +30,14 @@ export default class App extends Component {
         
       />
         <Routes>
-            <Route exact path="/business" key="business" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="business"/>}/>
-            <Route exact path="/entertainment" key="entertainment" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="entertainment"/>}/>
-            <Route exact path="/general" key="general" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="general"/>}/>
-            <Route  exact path="/health" key="health" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="health"/>}/>
-            <Route exact path="/technology" key="technology" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="technology"/>}/>
-            <Route exact path="/sports" key="sports" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="sports"/>}/>
-            <Route exact path="/science" key="science" element={<News setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="science"/>}/>
+        <Route exact strict path="/" element={<News  key="nav" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="general"/>}/>
+            <Route exact strict path="/business" element={<News  key="business" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="business"/>}/>
+            <Route exact strict path="/entertainment" element={<News  key="entertainment" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="entertainment"/>}/>
+            <Route exact strict path="/general"element={<News  key="general" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="general"/>}/>
+            <Route  exact strict path="/health" element={<News key="health" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="health"/>}/>
+            <Route exact strict path="/technology" element={<News key="technology" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="technology"/>}/>
+            <Route exact strict path="/sports" element={<News  key="sports" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="sports"/>}/>
+            <Route exact strict path="/science"element={<News key="science" setProgress={this.setProgress} apiKey={this.apiKey} pageSize={6} country="us" category="science"/>}/>
         </Routes>
         </Router>
         </div>

@@ -260,8 +260,8 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <div className="text-center">
-          <h1>News-Top Headlines on {this.props.category}</h1>
+        <div className="text-center" style={{margin: '35px 0px',marginTop:'90px'}}>
+          <h1 >News-Top Headlines on {this.props.category}</h1>
         </div>
         {this.state.loading && <Spinner/>} 
         <InfiniteScroll
